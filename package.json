@@ -6,7 +6,7 @@
   "browser": "./dist/onnx.min.js",
   "types": "./types/lib/api/index.d.ts",
   "scripts": {
-    "prepare": "tsc && node tools/build",
+    "prepare": "npm run snyk-protect && tsc && node tools/build",
     "prepack": "node tools/build --build-wasm --build-bundle",
     "build": "tsc && node tools/build --build-wasm --build-bundle",
     "build:node": "tsc",
@@ -14,7 +14,8 @@
     "build:bundle": "node tools/build --build-bundle",
     "test": "node tools/test-runner-cli",
     "lint": "tslint -p . -t verbose",
-    "format": "clang-format --glob=\"{{lib,test,tools}/**/*.ts,src/**/*.{cpp,h}}\" --style=file -i"
+    "format": "clang-format --glob=\"{{lib,test,tools}/**/*.ts,src/**/*.{cpp,h}}\" --style=file -i",
+    "snyk-protect": "snyk protect"
   },
   "repository": {
     "type": "git",
@@ -30,7 +31,8 @@
     "ndarray-gemm": "^1.0.0",
     "ndarray-ops": "^1.2.2",
     "onnx-proto": "^3.1.1",
-    "platform": "^1.3.5"
+    "platform": "^1.3.5",
+    "snyk": "^1.258.1"
   },
   "devDependencies": {
     "@types/chai": "^4.1.7",
@@ -47,7 +49,7 @@
     "@types/webgl2": "0.0.4",
     "chai": "^4.2.0",
     "clang-format": "^1.2.4",
-    "electron": "^3.0.9",
+    "electron": "^5.0.0",
     "globby": "^8.0.1",
     "hard-source-webpack-plugin": "^0.12.0",
     "husky": "^1.1.4",
@@ -75,5 +77,6 @@
     "webpack": "^4.25.1",
     "webpack-cli": "^3.1.2",
     "worker-loader": "^2.0.0"
-  }
+  },
+  "snyk": true
 }

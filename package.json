@@ -67,7 +67,7 @@
     "numpy-parser": "^1.0.1",
     "rimraf": "^2.6.2",
     "strip-json-comments": "^2.0.1",
-    "ts-loader": "^5.3.0",
+    "ts-loader": "^6.0.0",
     "tslint": "^5.11.0",
     "tslint-microsoft-contrib": "^5.2.1",
     "tslint-no-unused-expression-chai": "^0.1.4",
